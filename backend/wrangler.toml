@@ -1,0 +1,8 @@
+name = "barar-salat-time-backend"
+main = "worker.js"
+compatibility_date = "2026-11-03"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "barar-salat-users"
+database_id = "ae11d0b4-2507-493c-91a5-f37bd76ce049"
