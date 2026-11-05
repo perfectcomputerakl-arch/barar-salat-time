@@ -34,37 +34,6 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Restore Android app module from app.zip
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          mkdir -p app /tmp/app-archive
-
-          unzip -q -o app.zip -d /tmp/app-archive
-
-          APP_BUILD_FILE="$(find /tmp/app-archive -type f -name build.gradle -print -quit)"
-
-          if [ -z "$APP_BUILD_FILE" ]; then
-            echo "Could not find app module build.gradle inside app.zip"
-            find /tmp/app-archive -maxdepth 5 -type f | sort
-            exit 1
-          fi
-
-          APP_MODULE_DIR="$(dirname "$APP_BUILD_FILE")"
-
-          if [ ! -f "$APP_MODULE_DIR/src/main/AndroidManifest.xml" ]; then
-            echo "AndroidManifest.xml not found beside the app module build.gradle"
-            find /tmp/app-archive -maxdepth 7 -type f | sort
-            exit 1
-          fi
-
-          cp -a "$APP_MODULE_DIR"/. app/
-
-          test -f app/build.gradle
-          test -f app/src/main/AndroidManifest.xml
-          test -f app/src/main/assets/index.html
-
       - name: Build debug APK
         run: gradle assembleDebug --stacktrace
 
