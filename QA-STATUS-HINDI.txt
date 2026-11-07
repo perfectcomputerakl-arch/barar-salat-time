@@ -1,0 +1,22 @@
+BARAR SALAT TIME — QA STATUS v1.4.3
+
+FIXED IN THIS UPDATE:
+- Fixed HTML script-boundary error that caused JavaScript source code to appear as visible text on the Home screen.
+- All translation and application JavaScript now runs inside a script element.
+- Existing emerald/gold theme and existing app features have been preserved.
+- Rebuilt app.zip from the corrected Android app module.
+
+AUTOMATED CHECKS:
+- HTML script tag count: 3 opening / 3 closing.
+- Node.js syntax check: all 3 inline JavaScript blocks passed.
+- ZIP integrity test: passed.
+
+NOT VERIFIED:
+- No successful Gradle assembleDebug / signed AAB build in this environment.
+- No physical Android device test for GPS, compass, Urdu rendering, Android notifications, audio, file picker, navigation or login.
+- Background scheduled notifications when app is closed/force-stopped/rebooted are not implemented/verified.
+- Mobile/email login and secure OTP/account flow are not production-ready until backend deployment, migrations and security are verified.
+- Prayer calculation must be compared with a trusted local mosque timetable before relying on it for religious use.
+- Play Store privacy policy, Data Safety, signing, target SDK and release review remain required.
+
+This is a source-level bug fix package, not a claim of Play Store readiness.
