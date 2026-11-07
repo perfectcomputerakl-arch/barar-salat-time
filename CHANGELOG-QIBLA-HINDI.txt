@@ -1,8 +1,0 @@
-QIBLA UPDATE
-1. Replaced plain compass arrow with rotating N/E/S/W compass dial.
-2. Added Kaaba center symbol and gold QIBLA arrow.
-3. Added bearing in degrees from true north (calculated from current GPS coordinates).
-4. Added live left/right turn guidance and aligned-with-Qibla confirmation.
-5. Kept Android native rotation-vector compass bridge as heading source.
-
-Testing note: JavaScript syntax and package contents should be validated before APK release; physical device compass accuracy has not been verified.
